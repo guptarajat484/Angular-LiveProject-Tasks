@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2" id="col">
+            <div id="sidebar">
+                <br>
+                <h3>Power Indexing</h3>
+                <br>
+                <a (click)="link('introduction')">Introduction</a>
+                <br>
+                <a (click)="link('registration')">Registration</a>
+                <br>
+                <a (click)="link('login')">Login</a>
+                <br>
+                <a (click)="link('forget-password')">Forget Password</a>
+                <br>
+                <a (click)="link('dashboard-api')">Dashboard API</a>
+                <br>
+                <a (click)="link('system-performance')">System Performance</a>
+                <br>
+                <a (click)="link('invoices')">Invoice API</a>
+                <br>
+            </div>
+        </div>
+        <div class="col-10">
+            <div id="docs">
+                <markdown class="variable-binding docs" [data]="markdown"></markdown>
+            </div>
+        </div>
+    </div>
+</div>

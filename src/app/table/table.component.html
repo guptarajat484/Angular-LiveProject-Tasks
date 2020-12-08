@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form class="date-block" [formGroup]="filterForm">
+            <div class="date-block__list">
+                <input placeholder="From Date" formControlName="fromDate">
+            </div>
+
+            <div class="date-block__list">
+                <input placeholder="To Date" formControlName="toDate">
+            </div>
+            <button mat-button color="primary" class="primary" (click)="applyFilter()">Submit</button>
+        </form>
+        <div class="container">
+
+        </div>
+    </div>
+    <div class="form-group" class="form">
+        <b>Search:</b>
+        <input type="text" (keyup)="doFilter($event.target.value)" class="input">
+    </div><br><br>
+    <table mat-table [dataSource]="dataSource"   matSort class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let element "> {{element.Date}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="outputs">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.outputs}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Invoices">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
+            <td mat-cell *matCellDef="let element"> {{element.Invoices}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Balance">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Birth </th>
+            <td mat-cell *matCellDef="let element"> {{element.Balance }} </td>
+        </ng-container>
+
+        <!-- Founded Column -->
+        <ng-container matColumnDef="Wallet">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Created </th>
+            <td mat-cell *matCellDef="let element"> {{element.Wallet}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+a {
+    display: block;
+    color: black;
+    padding: 0px;
+    text-decoration: none;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.sidebar a.active {
+    background-color: #555;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.scroll-area {
+    height: 250px;
+    position: relative;
+    overflow: auto;
+}
+
+#sidebar {
+    position: fixed;
+}
+
+.registration {
+    color: skyblue;
+}
+
+#sidebar {
+    margin-top: 5px !important;
+}
+
+
+h3 {
+    color: black;
+    margin-top: 0px;
+}
